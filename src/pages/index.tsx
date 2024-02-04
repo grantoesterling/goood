@@ -4,26 +4,15 @@ import { AppConfig } from 'src/utils/AppConfig'
 import { HeadingText } from '@components/heading-text'
 import { css } from 'twin.macro'
 import { animate, motion, AnimatePresence } from 'framer-motion'
-import Canvas from 'src/layout/canvas'
 import { useEffect, useState } from 'react'
+import { Button, ButtonType } from '@components/button'
 
 export default function Home() {
   return (
     <>
       <DOM />
-      <R3F />
+      {/* <R3F /> */}
     </>
-  )
-}
-
-const R3F = () => {
-  return (
-    <Canvas>
-      {/* <ThreeDText text="GRANT OESTERLING" textAlign="center" rotatable={true} />
-      <Stars />
-      <Moon /> */}
-      {/* <FunHeaderText text="GRANT OESTERLING" color="#000000" /> */}
-    </Canvas>
   )
 }
 
@@ -82,7 +71,7 @@ const DOM = () => {
               ease: 'linear',
             }}
           >
-            <CircleText text="a fun new web design studio" />
+            <CircleText text="a fun new creative web design studio" />
           </motion.div>
         </motion.div>
       </div>
@@ -126,29 +115,44 @@ const AnimatedGooodTitle = () => {
 
 const CornerNav = () => {
   return (
-    <div
-      tw="absolute w-full h-full flex flex-col justify-between p-lg text-center text-purple-700"
-      css={`
-        text-shadow: #aaf 1px 0 10px;
-      `}
-    >
+    <div tw="absolute w-full h-full flex flex-col justify-between px-lg py-2xl">
       <div tw="flex justify-between">
-        <HeadingText tw=" -rotate-45" size="reg">
-          Home
-        </HeadingText>
-        <HeadingText tw="rotate-45" size="reg">
-          Projects
-        </HeadingText>
+        <MenuItem text="Home" angle={-45} />
+        <MenuItem text="Projects" angle={45} tw="pt-sm" />
       </div>
       <div tw="flex justify-between">
-        <HeadingText tw="rotate-[225deg]" size="reg">
-          About
-        </HeadingText>
-        <HeadingText tw="rotate-[135deg]" size="reg">
-          Fun
-        </HeadingText>
+        <MenuItem text="About" angle={225} tw="pb-sm" />
+        <MenuItem text="Fun" angle={135} />
       </div>
     </div>
+  )
+}
+
+const MenuItem = ({
+  text,
+  angle,
+  className,
+}: {
+  text: string
+  link?: string
+  angle: number
+  className?: string
+}) => {
+  return (
+    <motion.div
+      tw="text-center text-purple-700 "
+      initial={{
+        rotate: angle,
+      }}
+      whileHover={{
+        scale: 1.04,
+      }}
+      className={className}
+    >
+      <Button buttonType={ButtonType.unstyled} to={`/${text.toLowerCase()}`}>
+        <HeadingText size="reg">{text}</HeadingText>
+      </Button>
+    </motion.div>
   )
 }
 
@@ -168,7 +172,7 @@ const CircleText = ({ text }: { text: string; className?: string }) => {
       40,40 0 1,1 -80,0
     "
       />
-      <text fill="#2c5">
+      <text fill="#0b6">
         <textPath href="#circlePath">{text}</textPath>
       </text>
     </svg>
