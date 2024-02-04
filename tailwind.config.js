@@ -4,6 +4,7 @@ module.exports = {
     fontFamily: {
       manrope: ['Manrope', 'sans-serif'],
       marcellus: ['Marcellus', 'serif'],
+      basteleur: ['Basteleur', 'serif'],
     },
     fontSize: {
       xs: '0.75rem',

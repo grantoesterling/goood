@@ -31,7 +31,7 @@ export const HeadingText = ({
 }
 
 const Wrapper = styled.h2<Pick<HeadingProps, 'size'>>`
-  ${tw`tracking-[-0.02em] break-words font-manrope`}
+  ${tw`tracking-[-0.02em] break-words font-marcellus`}
   ${({ size }) => {
     /*
     The reason we have these sizes explicitly is because we have essentially two sites running and 
@@ -42,9 +42,9 @@ const Wrapper = styled.h2<Pick<HeadingProps, 'size'>>`
     */
     switch (size) {
       case 'display':
-        return tw`md:text-[72px] text-[48px] md:leading-[72px] leading-[54px] tracking-[-0.02em] font-marcellus`
+        return tw`md:text-[72px] text-[48px] md:leading-[72px] leading-[54px] tracking-[-0.02em]`
       case 'lg':
-        return tw`md:text-[56px] text-[42px] md:leading-[64px] leading-[48px] tracking-[-0.02em] font-marcellus`
+        return tw`md:text-[56px] text-[42px] md:leading-[64px] leading-[48px] tracking-[-0.02em]`
       case 'reg':
         return tw`text-[32px] leading-[40px] `
       case 'sm':

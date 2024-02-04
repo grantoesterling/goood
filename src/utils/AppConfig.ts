@@ -1,7 +1,7 @@
 export const AppConfig = {
-  site_name: 'Whodunit World',
-  title: 'Whodunit World - All things murder mystery',
+  site_name: 'The GOOOD Company',
+  title: 'The GOOOD Company',
   description:
-    'Your destination for anything and everything related to murder mysteries!',
+    'A creative design agency that loves to craft beautiful websites.',
   locale: 'en',
 }
