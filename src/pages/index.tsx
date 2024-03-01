@@ -6,6 +6,8 @@ import { css } from 'twin.macro'
 import { animate, motion, AnimatePresence } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { Button, ButtonType } from '@components/button'
+// import Canvas from 'src/layout/canvas'
+// import FunHeaderText from '@components/drei-text'
 
 export default function Home() {
   return (
@@ -15,6 +17,14 @@ export default function Home() {
     </>
   )
 }
+// // canvas components go here
+// const R3F = () => {
+//   return (
+//     <Canvas>
+//       <FunHeaderText text="GOOOD" color="hotpink" />
+//     </Canvas>
+//   )
+// }
 
 const DOM = () => {
   return (
@@ -40,7 +50,7 @@ const DOM = () => {
           />
         </div>
         <div />
-        <CornerNav />
+        {/* <CornerNav /> */}
         <div tw="flex flex-col items-center justify-center z-20">
           <HeadingText tw="z-10 text-pink-400" size="reg">
             The
@@ -49,31 +59,17 @@ const DOM = () => {
           <HeadingText tw="z-10 text-pink-400" size="reg">
             Company
           </HeadingText>
+          <HeadingText
+            tw="z-10 text-white max-w-[600px] text-center mt-sm"
+            size="reg"
+          >
+            A web design and development firm to keep your eye on. Full website
+            coming soon
+          </HeadingText>
           <div tw="absolute top-xl left-xl ">
             <CircleText text="the future of web design" />
           </div>
         </div>
-        <motion.div
-          tw="absolute w-[450px] h-[450px]"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }} // Specify the rotation value
-          transition={{
-            delay: 2,
-            duration: 2,
-            ease: 'easeInOut',
-          }}
-        >
-          <motion.div
-            animate={{ rotate: 360 }} // Specify the rotation value
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: 'linear',
-            }}
-          >
-            <CircleText text="a fun new creative web design studio" />
-          </motion.div>
-        </motion.div>
       </div>
     </>
   )
@@ -118,7 +114,7 @@ const CornerNav = () => {
     <div tw="absolute w-full h-full flex flex-col justify-between px-lg py-2xl">
       <div tw="flex justify-between">
         <MenuItem text="Home" angle={-45} />
-        <MenuItem text="Projects" angle={45} tw="pt-sm" />
+        <MenuItem text="Portfolio" angle={45} tw="pt-sm" />
       </div>
       <div tw="flex justify-between">
         <MenuItem text="About" angle={225} tw="pb-sm" />
