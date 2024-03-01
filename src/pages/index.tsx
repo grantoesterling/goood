@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Meta } from 'src/layout/Meta'
 import 'twin.macro'
 import { AppConfig } from 'src/utils/AppConfig'
